@@ -1,0 +1,102 @@
+@import url('../style.css');
+
+.container {
+    padding: 0px 0px 0px 48px;
+}
+.main-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+header {
+    padding: 10px 20px;
+    min-height: auto;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+}
+
+header p {
+    color: white;
+    background: black;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+header p span {
+    padding-left: 12px;
+}
+
+.palette {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.palette-rows {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.palette-cols {
+    flex-basis: 100%;
+    background-color: yellow;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: relative;
+}
+
+.palette-cols::before {
+    content: "COPY";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.palette-cols:hover::before {
+    opacity: 1;
+}
+
+.palette-cols p {
+    padding: 0px 10px 10px 0px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    line-height: 1;
+    font-size: 18px;
+}
+
+footer {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    font-weight: 600;
+}
+
+footer span {
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 4px;
+    margin-left: 4px;
+}
