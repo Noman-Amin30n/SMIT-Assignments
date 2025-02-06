@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Limelight&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --text-grey: rgba(255, 255, 255, 0.7);
+    --border-grey: rgba(255, 255, 255, 0.3);
+    --primary: #ed1c24;
+    --secondary: #28a745;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Roboto', serif;
+    background-color: var(--black);
+    width: 100%;
+    overflow: auto;
+}
+
+.Content {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+/* Buttons styling is here */
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid var(--border-grey);
+    border-radius: 999px;
+    color: var(--white);
+    font-size: 14px;
+    font-family: 'Inter', serif;
+    padding: 12px 16.5px 12px 16.5px;
+}
+
+button:has(> span) {
+    position: relative;
+    padding: 12px 62px 12px 16.5px;
+}
+
+button:has(> span) span {
+    width: 28px;
+    aspect-ratio: 1/1;
+    background-color: white;
+    color: var(--primary);
+    font-size: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.Button_1 {
+    border-color: white;
+}
+
+.Button_2 {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    padding-right: 58px;
+}
+
+.Button_2:has(> span) span {
+    width: 26px;
+}
+
+.Button_3 {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    padding-right: 60px;
+}
+
+.Button_3:has(> span) span {
+    width: 30px;
+    color: var(--secondary);
+}
+
+/* Header styling from here */
+
+header {
+    background-color: var(--black);
+    width: inherit;
+    padding: 8px 0;
+}
+
+#Header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+}
+
+#Logo img {
+    width: 165px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+}
+
+.Menu {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+    font-family: 'Inter', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Mobile-Menu {
+    display: none;
+}
+
+.Nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Section 01 styling from here */
+
+#Section_1 {
+    background-color: var(--black);
+    padding: 70px 15px;
+}
+
+#Section_1_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+}
+
+#Section_1_content h2 {
+    color: var(--white);
+    font-size: 40px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+
+#Section_1_content h2 span {
+    font-family: 'Limelight', serif;
+    font-size: 52px;
+}
+
+#Section_1_content > p,
+#Section_2_content > p {
+    color: var(--text-grey);
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.Brands {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.Brands > div {
+    flex-grow: 1;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    gap: 20px;
+}
+
+.Brands > div > div:nth-child(1) {
+    min-height: 100px;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+}
+
+.Brands > div > div:nth-child(1) img {
+    object-fit: contain;
+}
+
+.Brands > div > div:nth-child(2) button {
+    padding: 16px 48px;
+}
+
+/* Section 02 styling from here */
+
+#Section_2 {
+    padding: 70px;
+    background-color: rgba(255, 255, 255, 0.06);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+#Section_2::before {
+    content: url('assets/images/section_2bg.webp');
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    z-index: -999;
+}
+
+#Section_2_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#Section_2_content h2 {
+    color: var(--white);
+    font-size: 48px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+#Section_2_content h2 span {
+    font-family: 'Limelight', serif;
+    font-size: 52px;
+}
+
+.Franchises {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    padding: 0px 12px;
+    gap: 50px;
+}
+
+.Franchise {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.Franchise section {
+    flex-basis: 50%;
+}
+
+.Franchise-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.Franchise-info > span {
+    color: var(--primary);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.48em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.Franchise-info h3 {
+    color: var(--white);
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.Franchise-info h3 span {
+    font-family: 'Limelight', serif;
+}
+
+.Franchise-info > p {
+    color: var(--text-grey);
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.Franchise-info > button {
+    margin-top: 40px;
+}
+
+.Franchise-image div img {
+    width: 100%;
+}
+
+/* Section 03 styling from here */
+
+#Section_3 {
+    padding: 70px 0px 38px;
+    background-color: var(--black);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+#Section_3::before {
+    content: url('');
+    inset: 0;
+    background-image: url('assets/images/section_3bg.webp');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top left;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    z-index: -999;
+}
+
+#Section_3_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    padding: 0px 12px;
+}
+
+#Section_3_content h2 {
+    color: var(--white);
+    font-size: 48px;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#Section_3_content h2 span {
+    font-family: 'Limelight', serif;
+    font-size: 52px;
+}
+
+.Express-franchises {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+    row-gap: 32px;
+}
+
+.Express-franchise {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    gap: 24px;
+}
+.Express-franchise-image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.Express-franchise-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Express-franchise-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.Express-franchise-info > span {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.48em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.Express-franchise-info h3 {
+    color: var(--white);
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.Express-franchise-info h3 span {
+    font-family: 'Limelight', serif;
+}
+
+.Express-franchise-info > p {
+    color: var(--text-grey);
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.Express-franchise-info > p:nth-child(4) {
+    margin-bottom: 20px;
+}
+
+.Express-franchise-info > button {
+    margin-top: auto;
+}
+
+/* Section 4 styling from here */
+
+#Section_4 {
+    padding: 48px 0px;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+#Section_4 h2 {
+    color: var(--white);
+    font-size: 48px;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 32px;
+}
+
+#Section_4 h2 span {
+    font-family: 'Limelight', serif;
+    font-size: 52px;
+}
+
+
+.Village-franchise {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.Village-franchise > div {
+    flex-basis: 50%;
+}
+
+.Village-franchise-image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.Village-franchise-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Village-franchise-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 24px;
+}
+
+.Village-franchise-info > span {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.48em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.Village-franchise-info h3 {
+    color: var(--white);
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.Village-franchise-info h3 span {
+    font-family: 'Limelight', serif;
+}
+
+.Village-franchise-info > p {
+    color: var(--text-grey);
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.Village-franchise-info > button {
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 1400px) {
+    .Content {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .Content {
+        max-width: 960px;
+    }
+    .Brands > div > div:nth-child(2) > button {
+        padding: 12px 36px !important;
+    }
+}
+
+@media  screen and (max-width: 992px) {
+    #Logo img {
+        width: 84px;
+    }
+    .Menu, .Nav-buttons > button:nth-child(1) {
+        display: none;
+    }
+    .Nav-buttons > button:nth-child(2) {
+        padding: 7px 10px 7px 25px;
+        font-size: 12px;
+    }
+    .Nav-buttons > button:nth-child(2) span {
+        left: 10px;
+        background-color: transparent;
+        width: min-content;
+        aspect-ratio: auto;
+        color: var(--white);
+        font-size: 12px;
+    }
+    .Mobile-Menu {
+        display: block;
+    }
+    .Mobile-Menu > span {
+        font-size: 22px;
+    }
+    .Brands > div > div:nth-child(2) > button {
+        padding: 7px 24px !important;
+    }
+
+    .Express-franchises {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #Section_1, #Section_2, #Section_4 {
+        padding: 32px 15px;
+    }
+    #Section_3 {
+        padding-top: 32px;
+    }
+    #Section_1_content h2,
+    #Section_2_content h2,
+    #Section_3_content h2,
+    #Section_4 h2,
+    #Section_1_content h2 span,
+    #Section_2_content h2 span,
+    #Section_3_content h2 span,
+    #Section_4 h2 span {
+        font-size: 24px;
+    }
+    #Section_1_content > p,
+    #Section_2_content > p {
+        font-size: 14px;
+    }
+    #Section_1_content > p {
+        margin-bottom: 30px;
+    }
+    #Section_1_content,
+    #Section_2_content,
+    #Section_2_content,
+    #Section_3_content {
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Franchise {
+        flex-direction: column;
+    }
+    .Franchise section {
+        flex-basis: 100%;
+    }
+    .Franchise-info {
+        align-items: center;
+        text-align: center;
+    }
+    .Franchise-info h3 {
+        font-size: 22px;
+    }
+    .Franchise:nth-child(2) .Franchise-info {
+        order: -1;
+    }
+    .Village-franchise {
+        flex-direction: column;
+    }
+    .Village-franchise-info {
+        align-items: center;
+        text-align: center;
+        padding: 16px 0px 0px;
+    }
+    .Village-franchise-info h3 {
+        font-size: 22px;
+    }
+    .Village-franchise-info > button {
+        margin: 20px 0px 35px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #Section_2 {
+        padding: 32px 0px;
+    }
+
+    #Section_3_content {
+        padding: 0px;
+    }
+    .Franchises {
+        padding: 0px;
+    }
+}
+
+@media  screen and (max-width: 320px) {
+    header {
+        height: 92px;
+    }
+    #Header-content {
+        display: none;
+    }
+    .Express-franchises {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Limelight&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.carousel-item img {
+    animation: zoom 5s linear 0s 1 normal backwards;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.offcanvas {
+    width: 250px !important;
+}
+
+.Close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.Offcanvas-links {
+    padding: 60px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0;
+}
+
+.Offcanvas-links li {
+    padding: 8px 10px;
+    font-family: 'Inter', serif;
+    font-size: 14px;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+@media screen and (max-width: 640px) {
+    .offcanvas {
+        width: 100% !important;
+    }
+}

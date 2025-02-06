@@ -13,6 +13,7 @@
 
 header {
     padding: 10px 20px;
+    gap: 20px;
     min-height: auto;
     background-color: white;
     color: black;
@@ -99,4 +100,28 @@ footer span {
     font-weight: 800;
     margin-top: 4px;
     margin-left: 4px;
+}
+
+@media screen and (max-width : 250px) {
+    header p {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 545px) {
+    header > span {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 610px) {
+    .palette-cols::before {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .palette-cols p {
+        display: none;
+    }
 }
