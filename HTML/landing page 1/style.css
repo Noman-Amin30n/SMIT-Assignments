@@ -10,8 +10,8 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -259,7 +259,6 @@ nav {
     flex-direction: column;
     align-items: stretch;
     justify-content: start;
-    padding: 0px 12px;
     gap: 50px;
 }
 
@@ -344,7 +343,6 @@ nav {
     flex-direction: column;
     align-items: stretch;
     justify-content: start;
-    padding: 0px 12px;
 }
 
 #Section_3_content h2 {
@@ -516,6 +514,196 @@ nav {
     margin-top: 40px;
 }
 
+/* Section 05 styling from here */
+
+#Section_5 {
+    padding: 60px 0px 70px;
+    background-color: var(--black);
+}
+
+#Section_5_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 32px;
+}
+
+#Section_5_content h2 {
+    color: var(--white);
+    font-size: 48px;
+    line-height: 1.25;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+#Section_5_content h2 span:nth-child(1) {
+    font-family: 'Limelight', serif;
+    font-size: 52px;
+}
+
+#Section_5_content h2 span:nth-child(3) {
+    font-family: 'Inter', serif;
+    font-size: 26px;
+}
+
+.Upcoming-branches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+    row-gap: 56px;
+}
+
+.Up-branch {
+    padding: 25px 24px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.Up-branch img {
+    width: 56px;
+    margin-bottom: 16px;
+}
+
+.Up-branch small {
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.48em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.Up-branch p,
+.Up-branch > span {
+    color: var(--black);
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    line-height: 1.2;
+    margin-bottom: 0px;
+}
+
+.Up-branch p span {
+    font-family: 'Inter', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.Up-branch > span {
+    line-height: 1.5;
+}
+
+/* Section 06 styling from here */
+
+#Section_6 {
+    padding: 0px 10px 70px;
+    background-color: var(--black);
+}
+
+#Section_6 h2 {
+    font-family: 'Playfair Display', sans-serif;
+    color: var(--white);
+    font-size: 32px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.Feed {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 0px;
+}
+
+.Feed-item {
+    min-height: 250px;
+    flex-grow: 1;
+    background-color: white;
+    aspect-ratio: 1/1;
+}
+
+.Feed-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Footer styling */
+
+footer {
+    background-color: var(--black);
+}
+
+#Footer-row-1 {
+    padding: 70px 15px 55px;
+    background-color: rgba(255, 255, 255, 0.06);
+    position: relative;
+}
+
+#Footer-row-1::before {
+    content: url('assets/images/footer_bg.webp');
+    position: absolute;
+    bottom: 0px;
+    left: 35px;
+}
+
+.Footer-row1-content {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    column-gap: 45px;
+    row-gap: 30px;
+}
+
+.Footer-row1-content div {
+    flex: 1 1 auto;
+    min-height: 20px;
+}
+
+.Footer-row1-content div:nth-child(1) {
+    flex-basis: min(370px, 50%);
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 24px;
+}
+
+.Footer-row1-content div:nth-child(1) img {
+    width: 140px;
+}
+
+.Footer-row1-content div:nth-child(1) ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
 @media screen and (max-width: 1400px) {
     .Content {
         max-width: 1140px;
@@ -532,6 +720,9 @@ nav {
 }
 
 @media  screen and (max-width: 992px) {
+    .Content {
+        max-width: 720px;
+    }
     #Logo img {
         width: 84px;
     }
@@ -563,6 +754,10 @@ nav {
     .Express-franchises {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+    .Up-branch p,
+    .Up-branch > span span {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -572,15 +767,25 @@ nav {
     #Section_3 {
         padding-top: 32px;
     }
+    #Section_5 {
+        padding: 32px 0px;
+    }
     #Section_1_content h2,
     #Section_2_content h2,
     #Section_3_content h2,
     #Section_4 h2,
+    #Section_5_content h2,
+    #Section_6 h2,
     #Section_1_content h2 span,
     #Section_2_content h2 span,
     #Section_3_content h2 span,
-    #Section_4 h2 span {
+    #Section_4 h2 span,
+    #Section_5_content h2 span:nth-child(1) {
         font-size: 24px;
+    }
+
+    #Section_5_content h2 span:nth-child(3) {
+        font-size: 16px;
     }
     #Section_1_content > p,
     #Section_2_content > p {
@@ -592,7 +797,8 @@ nav {
     #Section_1_content,
     #Section_2_content,
     #Section_2_content,
-    #Section_3_content {
+    #Section_3_content,
+    #Section_5_content {    
         max-width: 540px;
         margin-left: auto;
         margin-right: auto;
@@ -627,6 +833,9 @@ nav {
     .Village-franchise-info > button {
         margin: 20px 0px 35px;
     }
+    .Upcoming-branches {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -639,6 +848,9 @@ nav {
     }
     .Franchises {
         padding: 0px;
+    }
+    .Upcoming-branches {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
