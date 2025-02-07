@@ -650,6 +650,8 @@ footer {
     padding: 70px 15px 55px;
     background-color: rgba(255, 255, 255, 0.06);
     position: relative;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 #Footer-row-1::before {
@@ -657,27 +659,20 @@ footer {
     position: absolute;
     bottom: 0px;
     left: 35px;
+    z-index: -999;
 }
 
 .Footer-row1-content {
     width: 100%;
     max-width: 1140px;
     margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     column-gap: 45px;
     row-gap: 30px;
 }
 
-.Footer-row1-content div {
-    flex: 1 1 auto;
-    min-height: 20px;
-}
-
-.Footer-row1-content div:nth-child(1) {
-    flex-basis: min(370px, 50%);
+.Footer-row1-content > div:nth-child(1) {
     font-size: 15px;
     letter-spacing: 0.03em;
     line-height: 1.25;
@@ -689,11 +684,24 @@ footer {
     gap: 24px;
 }
 
-.Footer-row1-content div:nth-child(1) img {
+.Footer-row1-content > div:nth-child(1) img {
     width: 140px;
 }
 
-.Footer-row1-content div:nth-child(1) ul {
+.Footer-row1-content > div:nth-child(1) p {
+    margin: 0px;
+}
+
+
+.Footer-sections-title {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.Footer-links {
     margin: 0px;
     padding: 0px;
     list-style-type: none;
@@ -702,6 +710,74 @@ footer {
     align-items: center;
     gap: 10px;
     color: rgba(255, 255, 255, 0.6);
+}
+
+.Footer-links-2 { 
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+}
+
+.Footer-links-heading {
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.Footer-links-mobile {
+    display: none;
+}
+
+.Footer-socials {
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    list-style-type: none;
+    color: var(--white);
+    gap: 8px;
+    padding: 0px;
+    margin-bottom: 24px;
+    font-size: 17px;
+    line-height: 1;
+}
+
+.Footer-socials > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+.Downloads-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 13px;
+}
+
+#Footer-row-2 {
+    padding: 15px;
+    background-color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.Footer-row2-content {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 45px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -716,6 +792,12 @@ footer {
     }
     .Brands > div > div:nth-child(2) > button {
         padding: 12px 36px !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .Footer-row1-content {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
@@ -836,6 +918,9 @@ footer {
     .Upcoming-branches {
         grid-template-columns: repeat(2, 1fr);
     }
+    .Footer-row1-content {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -851,6 +936,35 @@ footer {
     }
     .Upcoming-branches {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .Footer-row1-content {
+        grid-template-columns: 1fr;
+    }
+    .Footer-row1-content > div:nth-child(1) {
+        align-items: center;
+        text-align: center;
+    }
+    .Footer-links-large {
+        display: none;
+    }
+    .Footer-links-mobile {
+        display: block;
+    }
+
+    .Footer-row1-content > div:nth-child(5) {
+        text-align: center;
+    }
+    .Footer-socials {
+        justify-content: center;
+    }
+    .Downloads-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .Footer-row2-content span {
+        margin: 0px auto;
     }
 }
 
