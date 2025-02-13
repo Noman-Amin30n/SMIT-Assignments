@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Inbox clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="Container">
+        <header>
+            <div class="header-left">
+                <div class="menu-and-logo">
+                    <div class="icons icon-big" id="Hamburger">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <img src="assets/logo.png" alt="Gmail Logo" class="logo">
+                </div>
+                <div class="search-bar">
+                    <div class="icons icon-small">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input type="email" placeholder="Search mail" class="search-input">
+                    <div class="icons icon-small">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="icons icon-big">
+                    <i class="fa-regular fa-circle-question"></i>
+                </div>
+                <div class="icons icon-big">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="icons icon-big">
+                    <i class="fa-solid fa-table-cells"></i>
+                </div>
+                <div class="icons icon-big avatar-container">
+                    <div class="avatar">
+                        <img src="assets/avatar.jpg" alt="Avatar">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="main-left">
+                <button class="compose"><i class="fa-solid fa-pencil"></i> Compose</button>
+                <ul class="main-left-tabs">
+                    <li class="active"><i class="fa-solid fa-inbox"></i> Inbox <span>1,624</span></li>
+                    <li><i class="fa-regular fa-star"></i> Starred</li>
+                    <li><i class="fa-regular fa-clock"></i> Snoozed</li>
+                    <li><i class="fa-regular fa-paper-plane"></i> Sent</li>
+                    <li class="imp-tab"><i class="fa-regular fa-file"></i> Drafts <span>12</span></li>
+
+                    <li data-bs-toggle="collapse"
+                        data-bs-target="#More-items" aria-expanded="false" aria-controls="collapseExample" id="More">
+                        <i class="fa-solid fa-angle-down"></i> <span>More</span>
+                    </li>
+                    <div class="collapse" id="More-items">
+                        <li><i class="fa-solid fa-clipboard-list"></i> Important</li>
+                        <li><i class="fa-regular fa-comment-dots"></i> Chats</li>
+                        <li><i class="fa-regular fa-calendar-xmark"></i> Scheduled</li>
+                        <li><i class="fa-solid fa-envelopes-bulk"></i> All Mail</li>
+                        <li class="imp-tab"><i class="fa-solid fa-circle-exclamation"></i> Spam <span>7</span></li>
+                        <li><i class="fa-regular fa-trash-can"></i> Trash</li>
+                        <li><i class="fa-solid fa-layer-group"></i> Categories</li>
+                        <li><i class="fa-solid fa-tag"></i> Manage labels</li>
+                        <li><i class="fa-solid fa-plus"></i> Create new label</li>
+                    </div>
+
+                </ul>
+                <p class="new-label">Labels <i class="fa-solid fa-plus"></i></p>
+                <ul class="main-left-tabs">
+                    <li><i class="fa-solid fa-tag"></i> Work</li>
+                </ul>
+            </section>
+
+            <!-- main right -->
+
+            <section class="main-right">
+                <div class="tools">
+                    <div class="tools-left">
+
+                        <div class="btn-group Filter-mails">
+                            <button type="button" class="Dropdown-btn">
+                                <label class="Check-container">
+                                    <input type="checkbox" class="Check-mails">
+                                    <i class="fa-solid fa-check"></i>
+                                </label>
+                            </button>
+                            <button type="button" class="dropdown-toggle dropdown-toggle-split Dropdown-arrow"
+                                data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">All</a></li>
+                                <li><a class="dropdown-item" href="#">None</a></li>
+                                <li><a class="dropdown-item" href="#">Read</a></li>
+                                <li><a class="dropdown-item" href="#">Unread</a></li>
+                                <li><a class="dropdown-item" href="#">Starred</a></li>
+                                <li><a class="dropdown-item" href="#">Unstarred</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="icons icon-small">
+                            <i class="fa-solid fa-arrow-rotate-right"></i>
+                        </div>
+
+                        <div class="icons icon-small">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="tools-right"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
