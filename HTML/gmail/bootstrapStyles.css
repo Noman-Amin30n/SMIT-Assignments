@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-.Check-container {
-    padding: 12px 4px;
+.Checkbox-label {
     position: relative;
     cursor: pointer;
     font-size: 10px;
@@ -11,7 +10,7 @@
     user-select: none;
 }
 
-.Check-mails {
+.Checkbox-label input[type = checkbox] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -19,29 +18,30 @@
     width: 0;
 }
 
-.Check-mails ~ i {
+.Checkbox-label input[type = checkbox] ~ i {
     color: rgba(255, 255, 255, 0); 
     border: 2px solid #444746;
     border-radius: 2px;
     padding: 1px;
 }
 
-.Check-mails:checked ~ i {
+.Checkbox-label input[type = checkbox]:checked ~ i {
     color: #444746;
 }
 
-.Dropdown-btn {
+.Filters-dropdown-btn {
+    padding: 8px 6px;
     border: none;
     background-color: transparent;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
 }
 
-.Dropdown-btn:hover {
+.Filters-dropdown-btn:hover {
     background-color: rgba(60, 64, 67, 0.08);
 }
 
-.Dropdown-arrow {
+.Filters-dropdown-arrow {
     border: none;
     background-color: transparent;
     padding-inline: 4px;
@@ -50,7 +50,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.Dropdown-arrow:hover {
+.Filters-dropdown-arrow:hover {
     background-color: rgba(60, 64, 67, 0.08);
 }
 
@@ -66,8 +66,63 @@
     font-family: "Roboto", serif;
     color: #202124;
     font-size: 14px;
+    position: relative;
 }
 
 .dropdown-item:hover {
     background-color: rgba(60, 64, 67, 0.08);
+}
+
+.dropdown-divider {
+    margin: 6px 0px;
+    border-color: #ebebeb;
+}
+
+.disabled {
+    font-style: italic;
+    color: #5f6368 !important;
+}
+
+.More-dropdown-btn,
+.Sort-dropdown-btn {
+    border: none;
+    padding: 0px;
+    background-color: transparent;
+}
+
+.More-dropdown-btn::after,
+.Sort-dropdown-btn::after {
+    display: none;
+}
+
+.Dropdown-items-icon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 48px;
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Inline-dropdown-items-icon {
+    width: 20px;
+    font-size: 16px;
+    line-height: 1;
+    margin: auto 8px auto 0px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #757575;
+}
+
+.Inline-dropdown-items-icon i {
+    width: 100%;
+    text-align: center;
+}
+
+.Languages-dropdown a.dropdown-item {
+    color: #222222;
 }

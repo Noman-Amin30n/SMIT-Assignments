@@ -68,6 +68,7 @@ header {
     justify-content: center;
     align-items: center;
     color: var(--text-secondary);
+    background-color: transparent;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -295,7 +296,349 @@ main {
     gap: 8px;
 }
 
-.tools-left div.icon-small {
+.tools-left *.icon-small,
+.tools-right *.icon-small {
     font-size: 14px;
     color: #444746;
+    border: none;
+}
+
+.tools-right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 4px;
+}
+
+.Mail-count {
+    border: none;
+    background-color: transparent;
+    min-height: 36px;
+    padding: 0px 8px;
+    color: #5e5e5e;
+    font-size: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    cursor: pointer;
+}
+
+.Mail-count::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -9;
+    background-color: rgba(60, 64, 67, 0.1);
+    scale: 0.7;
+    opacity: 0;
+    transition: all 0.125s ease-out;
+}
+
+.Mail-count:hover::before {
+    scale: 1;
+    opacity: 1;
+}
+
+.Mails-container {
+    scrollbar-gutter: stable;
+    overflow-y: auto;
+    height: calc(100dvh - 100px);
+}
+
+.Mails-container::-webkit-scrollbar {
+    width: 10px;
+    border: 1px solid lightgrey;
+}
+
+.Mails-container::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+}
+
+.Mails-container::-webkit-scrollbar-thumb:hover {
+    background-color: darkgrey;
+}
+
+.Mails-container::-webkit-scrollbar-thumb:active {
+    background-color: grey;
+}
+
+.Categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 256px));
+    padding-left: 2px;
+}
+
+.Category-tabs {
+    height: 56px;
+    background-color: white;
+    color: var(--text-primary);
+    position: relative;
+    cursor: pointer;
+}
+
+.Category-tabs:has(.Active-tab) {
+    color: #0b57d0;
+}
+
+.Category-tabs:has(.Active-tab) .Category-tab-badge,
+.Category-tabs:has(.Active-tab) .Category-info {
+    display: none;
+}
+
+.Category-tabs-data {
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    gap: 4px;
+}
+
+.Category-icon {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.Category-label-and-info {
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.Category-label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+
+.Category-tab-badge {
+    color: white;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 0px 4px;
+    text-wrap: nowrap;
+}
+
+.Promotions-badge {
+    background-color: #188038;
+}
+
+.Social-badge {
+    background-color: #0b57d0;
+}
+
+.Updates-badge {
+    background-color: #e37400;
+}
+
+.Category-info {
+    width: 100%;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.Text-exceed::after {
+    content: "...";
+    position: absolute;
+    right: 0px;
+    background-color: white;
+    z-index: 1;
+}
+
+.Active-tab {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    translate: -50% 0px;
+    width: 80%;
+    height: 3px;
+    border-radius: 3px 3px 0px 0px;
+    background-color: #0b57d0;
+}
+
+.Mails {
+    padding-right: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+}
+
+.Mail {
+    height: 36px;
+    padding: 0px 0px 0px 16px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+
+.Mail:hover {
+    box-shadow: inset 1px 0 0 rgb(218,220,224),inset -1px 0 0 rgb(218,220,224),0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
+}
+
+.Mail::before {
+    content: "\f58e";
+    font-family: "FontAwesome";
+    position: absolute;
+    left: 8px;
+    color: #444746;
+    opacity: 0;
+}
+
+.Mail:hover::before {
+    opacity: 0.3;
+}
+
+.Mail-left-icons {
+    opacity: 0.3;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.Mail:hover .Mail-left-icons {
+    opacity: 1;
+}
+
+.Mail .icon-small {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+    color: #444746;
+}
+
+.Mail-sender {
+    width: 100%;
+    max-width: 200px;
+    padding: 0px 75px 0px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-wrap: nowrap;
+}
+
+.Mail-sender-text {
+    overflow: hidden;
+    position: relative;
+}
+
+.Mail-message {
+    text-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 0px;
+    flex-grow: 1;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.Imp-mail-message {
+    font-weight: 600;
+    color: var(--text-primary);
+} 
+
+.Mail-sender .Text-exceed::after {
+    content: ".";
+}
+
+.Date-and-mail-icons {
+    padding-left: 75px;
+    padding-right: 16px;
+}
+
+.Mail-date {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.Mail:hover .Date-and-mail-icons {
+    padding: 0px 16px 0px 16px;
+}
+
+.Mail:hover .Mail-date {
+    display: none;
+}
+
+.Mail-icons {
+    display: none;
+    justify-content: end;
+    align-items: center;
+    gap: 8px;
+}
+
+.Mail:hover .Mail-icons {
+    display: flex;
+}
+
+@media screen and (max-width : 992px) {
+    .Categories {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .Mail-sender {
+        padding-right: 20px;
+    }
+    .Date-and-mail-icons {
+        padding-left: 20px;
+    }
+}
+
+@media  screen and (max-width : 768px) {
+    .main-left {
+        position: absolute;
+        left: 0px;
+        z-index: 1;
+    }
+
+    .menu-and-logo {
+        min-width: min-content;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width : 410px) {
+    header {
+        gap: 20px;
+    }
+    .header-right > div.icons:not(:last-child) {
+        display: none;
+    }
+
+    .Mail-count {
+        display: none;
+    }
+
+    .tools-left > div:not(:first-child) {
+        display: none;
+    }
+
+    .Mail-left-icons > div:not(:first-child) {
+        display: none;
+    }
+
+    .Mail-sender {
+        width: 0px;
+        flex-grow: 1;
+    }
 }
