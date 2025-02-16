@@ -61,4 +61,15 @@ descriptions.forEach(description => {
     handleTextOverflow(description);
 });
 
+const mainNav = document.querySelector(".main-nav");
+const mainNavToggle = document.querySelector(".main-nav-toggle");
 
+mainNavToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("main-nav-open");
+    if (mainNav.classList.contains("main-nav-open")) {
+        mainRight.style.marginRight = "0px";
+    } else {
+        mainRight.style.marginRight = "16px";
+    }
+    mainNavToggle.classList.toggle("main-nav-toggle-open");
+});

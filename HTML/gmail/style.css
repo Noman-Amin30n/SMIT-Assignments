@@ -153,6 +153,8 @@ main {
     display: flex;
     justify-content: start;
     align-items: stretch;
+    position: relative;
+    overflow: hidden;
 }
 
 .main-left {
@@ -280,6 +282,7 @@ main {
     background-color: white;
     margin: 0px 16px 16px 0px;
     border-radius: 16px;
+    transition: all 0.2s ease-in-out;
 }
 
 .tools {
@@ -588,6 +591,77 @@ main {
     display: flex;
 }
 
+.main-nav {
+    height: calc(100dvh - 68px);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    position: absolute;
+    right: 0px;
+    translate: 100% 0px;
+    transition: all 0.2s ease-in-out;
+}
+
+.main-nav-open {
+    position: static;
+    translate: 0px 0px;
+}
+
+.main-nav-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.main-nav-open .main-nav-icons {
+    opacity: 1;
+}
+
+.main-nav-icons > hr {
+    width: 50%;
+    border: none;
+    border-top: 2px solid darkgrey;
+}
+
+.main-nav-icons > div.icon-small {
+    color: var(--text-primary);
+}
+
+.main-nav-toggle {
+    cursor: pointer;
+    color: var(--text-primary);
+    background-color: white;
+    width: 48px;
+    padding-right: 8px;
+    border-radius: 20px 0px 0px 20px;
+    font-size: 14px;
+    position: absolute;
+    box-shadow: 0 1px 1px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
+    left: -32px;
+    bottom: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.main-nav-toggle:hover {
+    left: -48px;
+    background-color: #eaebee;
+}
+
+.main-nav-toggle-open {
+    position: static;
+    width: 40px;
+    padding: 0px;
+    border-radius: 50%;
+    box-shadow: none;
+}
+
 @media screen and (max-width : 992px) {
     .Categories {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -615,6 +689,12 @@ main {
         display: none;
     }
 
+}
+
+@media screen and (max-width : 485px) {
+    .main-nav {
+        display: none;
+    }
 }
 
 @media screen and (max-width : 410px) {
