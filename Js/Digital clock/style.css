@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  padding: 100px 60px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(to right, #223a54, #141e30);
+  padding: 30px 40px;
+  border-radius: 10px;
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  text-wrap: nowrap;
+}
+
+main > div:nth-child(1) {
+    font-size: 6vw;
+    font-weight: 600;
+}
+
+#ampm {
+    margin-left: 30px;
+}
+
+main > div:nth-child(2) {
+    font-size: 2.8vw;
+}
+
+@media screen and (max-width: 992px) {
+    main > div:nth-child(1) {
+        font-size: 48px;
+    }
+    main > div:nth-child(2) {
+        font-size: 24px;
+    }
+    #ampm {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 50px 30px;
+    }
+    main > div:nth-child(1) {
+        font-size: 36px;
+    }
+    main > div:nth-child(2) {
+        font-size: 18px;
+    }
+    #ampm {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        padding: 40px 20px;
+    }
+    main > div:nth-child(1) {
+        font-size: 24px;
+    }
+    main > div:nth-child(2) {
+        font-size: 12px;
+    }    
+    #ampm {
+        margin-left: 5px;
+    }
+    
+}

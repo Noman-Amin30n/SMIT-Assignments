@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display">
+        <div id="inputField"></div>
+        <div id="outputField"></div>
+      </div>
+      <div class="buttons">
+        <button onclick="appendToInput('7')">7</button>
+        <button onclick="appendToInput('8')">8</button>
+        <button onclick="appendToInput('9')">9</button>
+        <button onclick="appendToInput('/')">/</button>
+
+        <button onclick="appendToInput('4')">4</button>
+        <button onclick="appendToInput('5')">5</button>
+        <button onclick="appendToInput('6')">6</button>
+        <button onclick="appendToInput('*')">*</button>
+
+        <button onclick="appendToInput('1')">1</button>
+        <button onclick="appendToInput('2')">2</button>
+        <button onclick="appendToInput('3')">3</button>
+        <button onclick="appendToInput('-')">-</button>
+
+        <button onclick="appendToInput('0')">0</button>
+        <button onclick="appendToInput('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="appendToInput('+')">+</button>
+
+        <button onclick="appendToInput('**')">^</button>
+        <button onclick="sqrt()">√</button>
+        <button onclick="square()">x²</button>
+        <button onclick="cube()">x³</button>
+
+        <button onclick="appendToInput('\u0028')">&#40;</button>
+        <button onclick="appendToInput('\u0029')">&#41;</button>
+        <button class="wide" onclick="clearInput()">C</button>
+        <button class="full-row" onclick="backspace()">⌫</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
