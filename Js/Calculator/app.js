@@ -17,6 +17,10 @@ function backspace() {
 function calculate() {
     try {
         var result = eval(inputField.innerText);
+        if (result === undefined) {
+            outputField.innerText = "Invalid Input";
+            return;
+        }
         outputField.innerText = result;
     } catch (e) {
         outputField.innerText = "Error";
